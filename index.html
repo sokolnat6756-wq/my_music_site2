@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Наталья Сокол — Авторские и персональные песни на заказ</title>
+  <meta name="description" content="Авторские и персональные песни на заказ от Натальи Сокол. Песни для свадеб, юбилеев, дней рождения и личных историй. Индивидуальный текст, живая подача, неповторимые эмоции.">
+  <meta name="keywords" content="песня на заказ, авторская песня, персональная песня, песня в подарок, Наталья Сокол, свадебная песня, песня для мамы">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Наталья Сокол — Авторские и персональные песни">
+  <meta property="og:description" content="Песни, которые остаются в сердце. Авторские композиции для самых важных моментов жизни.">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1516280440614-37939bbacd81?q=80&w=1920&auto=format&fit=crop">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            display: ['Cormorant Garamond', 'serif'],
+            sans: ['Plus Jakarta Sans', 'sans-serif']
+          },
+          colors: {
+            cream: '#faf7f2',
+            gold: '#a06d50',
+            goldDark: '#7d4f3a',
+            ink: '#252030'
+          }
+        }
+      }
+    }
+  </script>
+
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body class="bg-cream text-ink font-sans antialiased">
+
+  <!-- HEADER -->
+  <header id="site-header" class="fixed top-0 left-0 z-50 w-full bg-black/20 backdrop-blur-md border-b border-white/10 transition-colors duration-300">
+    <div class="mx-auto flex max-w-7xl items-center justify-between px-6 py-5">
+      <a href="#" class="font-display text-2xl md:text-3xl font-semibold text-white">
+        Наталья Сокол
+      </a>
+
+      <nav class="hidden md:flex items-center gap-8 text-sm text-white/90 font-medium">
+        <a href="#songs" class="hover:text-white transition">Песни</a>
+        <a href="#about" class="hover:text-white transition">О Наталье</a>
+        <a href="#reviews" class="hover:text-white transition">Отзывы</a>
+        <a href="#contacts" class="hover:text-white transition">Контакты</a>
+        <button data-open-order class="rounded-full bg-gold px-5 py-2 text-white transition hover:bg-goldDark">
+          Заказать песню
+        </button>
+      </nav>
+
+      <!-- Mobile burger -->
+      <button id="burger" class="md:hidden flex flex-col gap-1.5 w-9 h-9 items-center justify-center" aria-label="Открыть меню">
+        <span class="burger-line block h-0.5 w-6 bg-white transition-all"></span>
+        <span class="burger-line block h-0.5 w-6 bg-white transition-all"></span>
+        <span class="burger-line block h-0.5 w-6 bg-white transition-all"></span>
+      </button>
+    </div>
+
+    <!-- Mobile menu -->
+    <div id="mobile-menu" class="md:hidden hidden bg-black/95 backdrop-blur-md border-t border-white/10">
+      <nav class="flex flex-col px-6 py-6 gap-5 text-white/90 font-medium">
+        <a href="#songs" class="mobile-link hover:text-white transition">Песни</a>
+        <a href="#about" class="mobile-link hover:text-white transition">О Наталье</a>
+        <a href="#reviews" class="mobile-link hover:text-white transition">Отзывы</a>
+        <a href="#contacts" class="mobile-link hover:text-white transition">Контакты</a>
+        <button data-open-order class="rounded-full bg-gold px-5 py-3 text-white transition hover:bg-goldDark mt-2">
+          Заказать песню
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="relative min-h-screen overflow-hidden flex items-center">
+    <div
+      class="absolute inset-0 bg-cover bg-center scale-105 hero-bg"
+      style="background-image:url('https://images.unsplash.com/photo-1516280440614-37939bbacd81?q=80&w=1920&auto=format&fit=crop')"
+    ></div>
+    <div class="absolute inset-0 bg-black/60"></div>
+    <div class="absolute -top-40 right-0 h-96 w-96 rounded-full bg-gold/30 blur-3xl"></div>
+
+    <div class="relative z-10 mx-auto grid max-w-7xl gap-12 px-6 pt-32 pb-20 lg:grid-cols-2 lg:items-center">
+      <div data-reveal>
+        <p class="mb-5 inline-flex rounded-full border border-white/20 bg-white/10 px-5 py-2 text-sm font-medium text-white backdrop-blur-md">
+          Музыка с душой и смыслом
+        </p>
+        <h1 class="font-display text-5xl font-bold leading-tight text-white md:text-7xl">
+          Авторские и персональные песни
+        </h1>
+        <p class="mt-6 max-w-xl text-lg leading-relaxed text-white/85 md:text-xl">
+          Я создаю песни, в которых люди узнают свою историю,
+          любовь и самые важные моменты жизни.
+        </p>
+        <div class="mt-10 flex flex-wrap gap-4">
+          <a href="#songs"
+            class="rounded-full bg-gold px-8 py-4 text-sm font-semibold text-white transition hover:bg-goldDark">
+            Слушать песни
+          </a>
+          <button data-open-order
+            class="rounded-full border border-white/30 bg-white/10 px-8 py-4 text-sm font-semibold text-white backdrop-blur-md transition hover:bg-white hover:text-ink">
+            Заказать песню
+          </button>
+        </div>
+        <div class="mt-10 flex flex-wrap gap-6 text-sm text-white/80">
+          <div>🎵 Более 100 персональных песен</div>
+          <div>💌 Свадьбы, юбилеи, семейные истории</div>
+        </div>
+      </div>
+
+      <div class="rounded-[32px] border border-white/10 bg-white/10 p-8 shadow-2xl backdrop-blur-xl" data-reveal data-reveal-delay="200">
+        <p class="font-display text-4xl font-semibold text-white">
+          Песня, которая останется в сердце
+        </p>
+        <p class="mt-5 text-white/80 leading-relaxed">
+          Для дня рождения, свадьбы, годовщины или личной истории — каждая композиция создаётся индивидуально и наполнена настоящими эмоциями.
+        </p>
+        <div class="mt-8 space-y-4">
+          <div class="rounded-2xl bg-white/10 p-4 text-white backdrop-blur-md">
+            ✨ Индивидуальный текст и история
+          </div>
+          <div class="rounded-2xl bg-white/10 p-4 text-white backdrop-blur-md">
+            🎙 Живая эмоциональная подача
+          </div>
+          <div class="rounded-2xl bg-white/10 p-4 text-white backdrop-blur-md">
+            💫 Идеальный подарок на важную дату
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SONGS -->
+  <section id="songs" class="mx-auto max-w-7xl px-6 py-24">
+    <div class="text-center" data-reveal>
+      <p class="text-sm uppercase tracking-[0.3em] text-gold">
+        Музыкальная коллекция
+      </p>
+      <h2 class="mt-4 font-display text-5xl font-bold">
+        Авторские песни
+      </h2>
+      <p class="mx-auto mt-5 max-w-2xl text-ink/70 leading-relaxed">
+        Послушайте отрывки. Положите свои MP3-файлы в папку <code class="text-gold">assets/audio/</code> и обновите ссылки в этом блоке.
+      </p>
+    </div>
+
+    <div class="mt-16 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+
+      <!-- Song card 1 -->
+      <article class="song-card overflow-hidden rounded-[30px] bg-white shadow-xl transition hover:-translate-y-2" data-reveal>
+        <div class="h-64 bg-cover bg-center"
+          style="background-image:url('https://images.unsplash.com/photo-1501386761578-eac5c94b800a?q=80&w=1200&auto=format&fit=crop')">
+        </div>
+        <div class="p-6">
+          <h3 class="font-display text-3xl font-semibold">
+            Песня для мамы
+          </h3>
+          <p class="mt-3 text-ink/70 leading-relaxed">
+            Тёплая музыкальная история о любви, благодарности и семье.
+          </p>
+
+          <div class="custom-player mt-5"
+               data-src="assets/audio/song-1.mp3"
+               data-title="Песня для мамы">
+          </div>
+        </div>
+      </article>
+
+      <!-- Song card 2 -->
+      <article class="song-card overflow-hidden rounded-[30px] bg-white shadow-xl transition hover:-translate-y-2" data-reveal data-reveal-delay="100">
+        <div class="h-64 bg-cover bg-center"
+          style="background-image:url('https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?q=80&w=1200&auto=format&fit=crop')">
+        </div>
+        <div class="p-6">
+          <h3 class="font-display text-3xl font-semibold">
+            Свадебная песня
+          </h3>
+          <p class="mt-3 text-ink/70 leading-relaxed">
+            Музыка для самого красивого дня в жизни двух любящих людей.
+          </p>
+
+          <div class="custom-player mt-5"
+               data-src="assets/audio/song-2.mp3"
+               data-title="Свадебная песня">
+          </div>
+        </div>
+      </article>
+
+      <!-- Song card 3 -->
+      <article class="song-card overflow-hidden rounded-[30px] bg-white shadow-xl transition hover:-translate-y-2" data-reveal data-reveal-delay="200">
+        <div class="h-64 bg-cover bg-center"
+          style="background-image:url('https://images.unsplash.com/photo-1511379938547-c1f69419868d?q=80&w=1200&auto=format&fit=crop')">
+        </div>
+        <div class="p-6">
+          <h3 class="font-display text-3xl font-semibold">
+            Песня для любимого человека
+          </h3>
+          <p class="mt-3 text-ink/70 leading-relaxed">
+            Личная история, превращённая в трогательную песню.
+          </p>
+
+          <div class="custom-player mt-5"
+               data-src="assets/audio/song-3.mp3"
+               data-title="Песня для любимого человека">
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="bg-white py-24">
+    <div class="mx-auto grid max-w-7xl gap-16 px-6 lg:grid-cols-2 lg:items-center">
+      <div data-reveal>
+        <p class="text-sm uppercase tracking-[0.3em] text-gold">
+          О Наталье
+        </p>
+        <h2 class="mt-4 font-display text-5xl font-bold leading-tight">
+          Музыка, созданная сердцем
+        </h2>
+        <p class="mt-8 text-lg leading-relaxed text-ink/75">
+          Наталья Сокол создаёт персональные песни для самых важных моментов жизни. Каждая композиция — это не просто музыка, а настоящая история, наполненная эмоциями, воспоминаниями и любовью.
+        </p>
+        <div class="mt-10 grid gap-4 sm:grid-cols-2">
+          <div class="rounded-3xl bg-cream p-6">
+            <p class="text-4xl font-bold text-gold">100+</p>
+            <p class="mt-2 text-sm text-ink/70">Созданных песен</p>
+          </div>
+          <div class="rounded-3xl bg-cream p-6">
+            <p class="text-4xl font-bold text-gold">∞</p>
+            <p class="mt-2 text-sm text-ink/70">Эмоций и воспоминаний</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="overflow-hidden rounded-[40px] shadow-2xl" data-reveal data-reveal-delay="200">
+        <img
+          src="https://images.unsplash.com/photo-1487215078519-e21cc028cb29?q=80&w=1400&auto=format&fit=crop"
+          alt="Наталья Сокол — автор и исполнитель песен"
+          class="h-full w-full object-cover"
+        >
+      </div>
+    </div>
+  </section>
+
+  <!-- REVIEWS -->
+  <section id="reviews" class="mx-auto max-w-7xl px-6 py-24">
+    <div class="text-center" data-reveal>
+      <p class="text-sm uppercase tracking-[0.3em] text-gold">
+        Отзывы
+      </p>
+      <h2 class="mt-4 font-display text-5xl font-bold">
+        Что говорят люди
+      </h2>
+    </div>
+    <div class="mt-16 grid gap-8 lg:grid-cols-3">
+      <article class="rounded-[30px] bg-white p-8 shadow-xl" data-reveal>
+        <p class="text-lg leading-relaxed text-ink/80">
+          «Песня растрогала всю нашу семью до слёз. Это был лучший подарок маме.»
+        </p>
+        <p class="mt-6 font-semibold text-goldDark">— Анна</p>
+      </article>
+      <article class="rounded-[30px] bg-white p-8 shadow-xl" data-reveal data-reveal-delay="100">
+        <p class="text-lg leading-relaxed text-ink/80">
+          «Невероятно красиво переданы чувства. Мы слушаем песню снова и снова.»
+        </p>
+        <p class="mt-6 font-semibold text-goldDark">— Марина</p>
+      </article>
+      <article class="rounded-[30px] bg-white p-8 shadow-xl" data-reveal data-reveal-delay="200">
+        <p class="text-lg leading-relaxed text-ink/80">
+          «Это больше, чем музыка. Это память, которая останется навсегда.»
+        </p>
+        <p class="mt-6 font-semibold text-goldDark">— Екатерина</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contacts" class="relative overflow-hidden py-24">
+    <div class="absolute inset-0 bg-cover bg-center"
+      style="background-image:url('https://images.unsplash.com/photo-1516280440614-37939bbacd81?q=80&w=1920&auto=format&fit=crop')">
+    </div>
+    <div class="absolute inset-0 bg-black/70"></div>
+
+    <div class="relative z-10 mx-auto max-w-4xl px-6 text-center text-white" data-reveal>
+      <h2 class="font-display text-5xl font-bold leading-tight">
+        Закажите песню,<br>
+        которая станет частью вашей истории
+      </h2>
+      <p class="mx-auto mt-6 max-w-2xl text-lg text-white/80 leading-relaxed">
+        Расскажите о человеке, событии или чувствах — и я создам музыку, которую будут помнить долгие годы.
+      </p>
+
+      <div class="mt-12 flex flex-wrap justify-center gap-5">
+        <button data-open-order
+          class="rounded-full bg-gold px-8 py-4 text-sm font-semibold text-white transition hover:bg-goldDark">
+          📝 Заполнить заявку
+        </button>
+        <a id="telegram-link" href="#" target="_blank" rel="noopener"
+          class="rounded-full border border-white/30 bg-white/10 px-8 py-4 text-sm font-semibold text-white backdrop-blur-md transition hover:bg-white hover:text-ink">
+          ✈ Написать в Telegram
+        </a>
+        <a id="whatsapp-link" href="#" target="_blank" rel="noopener"
+          class="rounded-full border border-white/30 bg-white/10 px-8 py-4 text-sm font-semibold text-white backdrop-blur-md transition hover:bg-white hover:text-ink">
+          💬 WhatsApp
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-black py-8 text-center text-sm text-white/60">
+    © 2026 Наталья Сокол. Авторские и персональные песни.
+  </footer>
+
+  <!-- ORDER MODAL -->
+  <div id="order-modal" class="fixed inset-0 z-[100] hidden items-center justify-center p-4" aria-modal="true" role="dialog" aria-labelledby="order-modal-title">
+    <div class="absolute inset-0 bg-black/70 backdrop-blur-sm modal-overlay"></div>
+
+    <div class="relative z-10 w-full max-w-2xl rounded-[30px] bg-white shadow-2xl modal-content max-h-[90vh] overflow-y-auto">
+      <button data-close-order class="absolute top-5 right-5 z-10 w-10 h-10 rounded-full bg-ink/5 hover:bg-ink/10 transition flex items-center justify-center text-ink" aria-label="Закрыть">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6 6 18M6 6l12 12"/></svg>
+      </button>
+
+      <div class="p-8 md:p-10">
+        <p class="text-xs uppercase tracking-[0.3em] text-gold">Заявка на песню</p>
+        <h3 id="order-modal-title" class="mt-3 font-display text-4xl font-bold leading-tight">
+          Расскажите о вашей истории
+        </h3>
+        <p class="mt-3 text-ink/70 leading-relaxed">
+          Заполните форму — после отправки откроется Telegram или WhatsApp с готовым сообщением, останется только нажать «Отправить».
+        </p>
+
+        <form id="order-form" class="mt-8 space-y-5" novalidate>
+          <div>
+            <label class="block text-sm font-medium text-ink/80 mb-2">Как вас зовут? <span class="text-gold">*</span></label>
+            <input name="name" type="text" required class="form-field" placeholder="Например, Анна">
+          </div>
+
+          <div class="grid gap-5 sm:grid-cols-2">
+            <div>
+              <label class="block text-sm font-medium text-ink/80 mb-2">Тип события <span class="text-gold">*</span></label>
+              <select name="event" required class="form-field">
+                <option value="">Выберите...</option>
+                <option>Свадьба</option>
+                <option>День рождения</option>
+                <option>Юбилей</option>
+                <option>Годовщина</option>
+                <option>Подарок маме / папе</option>
+                <option>Личная история</option>
+                <option>Другое</option>
+              </select>
+            </div>
+
+            <div>
+              <label class="block text-sm font-medium text-ink/80 mb-2">Дата события</label>
+              <input name="date" type="date" class="form-field">
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-sm font-medium text-ink/80 mb-2">Расскажите о человеке или истории <span class="text-gold">*</span></label>
+            <textarea name="story" rows="5" required class="form-field" placeholder="Имя, возраст, какие чувства хочется передать, важные моменты, любимое..."></textarea>
+          </div>
+
+          <div>
+            <label class="block text-sm font-medium text-ink/80 mb-2">Удобный способ связи <span class="text-gold">*</span></label>
+            <div class="grid grid-cols-2 gap-3">
+              <label class="channel-option">
+                <input type="radio" name="channel" value="telegram" checked>
+                <span>✈ Telegram</span>
+              </label>
+              <label class="channel-option">
+                <input type="radio" name="channel" value="whatsapp">
+                <span>💬 WhatsApp</span>
+              </label>
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-sm font-medium text-ink/80 mb-2">Ваш контакт</label>
+            <input name="contact" type="text" class="form-field" placeholder="@username или +7 XXX XXX-XX-XX (необязательно)">
+            <p class="mt-2 text-xs text-ink/50">Если вы пишете в мессенджер — я увижу ваш контакт автоматически.</p>
+          </div>
+
+          <button type="submit" class="w-full rounded-full bg-gold py-4 font-semibold text-white transition hover:bg-goldDark">
+            Отправить заявку →
+          </button>
+
+          <p class="text-xs text-ink/50 text-center">
+            Нажимая «Отправить», вы соглашаетесь с обработкой персональных данных.
+          </p>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Floating contact button -->
+  <button data-open-order id="float-cta" class="fixed bottom-6 right-6 z-40 rounded-full bg-gold text-white shadow-2xl hover:bg-goldDark transition-all flex items-center gap-2 px-5 py-4 font-semibold opacity-0 translate-y-4 pointer-events-none">
+    🎵 <span class="hidden sm:inline">Заказать песню</span>
+  </button>
+
+  <script src="assets/js/app.js"></script>
+</body>
+</html>
